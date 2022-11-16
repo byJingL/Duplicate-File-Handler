@@ -1,7 +1,7 @@
 # Duplicate File Handler
 Duplicate File Handler is a useful tool that can free some space on your drive. It can check and compares files in a folder, displays the result, and removes duplicates.
 ## Main Skill
-OS Module, Hash, Hash Table
+OS Module, Hash, Hash Table, hashlib module
 
 
 
