@@ -70,7 +70,7 @@ Enter file numbers to delete:
 Wrong format
 
 Enter file numbers to delete:
-> 1 2 4
+>>> 1 2 4
 
 Total freed up space: 14523488 bytes
 ```
