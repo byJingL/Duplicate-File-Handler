@@ -14,9 +14,9 @@ def check_duplicates():
     while True:
         print('\n============================================')
         answer = input('Check for duplicates? (yes or no)\n>>> ')
-        if answer == 'yes':
+        if answer.lower() == 'yes':
             return True
-        elif answer == 'no':
+        elif answer.lower() == 'no':
             return False
         else:
             print('Wrong option')
@@ -30,9 +30,9 @@ def check_delete():
     while True:
         print('\n============================================')
         answer = input('Delete files? (yes or no)\n>>> ')
-        if answer == 'yes':
+        if answer.lower() == 'yes':
             return True
-        elif answer == 'no':
+        elif answer.lower() == 'no':
             return False
         else:
             print('Wrong option')
@@ -203,6 +203,7 @@ parser = argparse.ArgumentParser(description='')
 parser.add_argument("root_folder", default=None, nargs='?')
 args = parser.parse_args()
 if args.root_folder is not None:
+    
     file_extension = input('Enter file format:\n>>> ')
     while True:
         user_sort = input('\nSize sorting options:\n1. Descending\n2. Ascending\n\nEnter a sorting option:\n>>> ')
@@ -218,18 +219,18 @@ if args.root_folder is not None:
     if check_duplicates():
         files_with_hash = check_hash(same_size_files)
         file_to_delete = display_same_hash(user_sort, files_with_hash)
+    
+        if check_delete():
+            while True:
+                delete_input = input('\nEnter file numbers to delete:\n>>> ').split(' ')
+                try:
+                    delete_num = check_delete_input(delete_input, file_to_delete)
+                except ValueError:
+                    print('\nWrong format')
+                else:
+                    break
 
-    if check_delete():
-        while True:
-            delete_input = input('\nEnter file numbers to delete:\n>>> ').split(' ')
-            try:
-                delete_num = check_delete_input(delete_input, file_to_delete)
-            except ValueError:
-                print('\nWrong format')
-            else:
-                break
-
-        delete_file(delete_num, file_to_delete)
+            delete_file(delete_num, file_to_delete)
 
 else:
     print('Directory is not specified')
