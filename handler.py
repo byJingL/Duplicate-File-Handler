@@ -50,7 +50,7 @@ def get_hash(full_path):
 # --------------------- Get, Display and Delete files --------------------#
 def get_file(folder, extension):
     ''' 
-    Create a dict with file size as keys
+    Return a dict with file size as keys.
     :param folder: folder to search
     :param extension: file format to search, '' for all file
     :return dict = {
@@ -76,7 +76,7 @@ def get_file(folder, extension):
 
 def check_size(files):
     ''' 
-    Create a dict just cotains files with same size
+    Return a dict just cotains files with same size.
     :param files: all files
     :return dict = {
         size1: [file1, file2, ...],
@@ -90,7 +90,7 @@ def check_size(files):
 
 def check_hash(files):
     ''' 
-    Create a nested dict with file size as keys for outter dict and hash value as keys for inner dict
+    Return a nested dict with file size as keys for outter dict and hash value as keys for inner dict.
     :param files: files with same size
     :return dict = {
         size1: {
@@ -119,7 +119,7 @@ def check_hash(files):
 
 def display_same_size(size_sort, files):
     '''
-    Print files have same size
+    Print files have same size.
     :param size_sort: user's sorting option
     :param files: files with same size
     '''
@@ -136,7 +136,7 @@ def display_same_size(size_sort, files):
 
 def display_same_hash(size_sort, files):
     '''
-    Print files have same hash
+    Print files have same hash.
     Create a list of files to delete with tuple(file_path, file_size)
     :param size_sort: user's sorting option
     :param files: files with same hash
@@ -164,7 +164,7 @@ def display_same_hash(size_sort, files):
 
 def check_delete_input(list, files):
     '''
-    Check user delete input 
+    Return the file number that user want to delete.
     :param list: user input list
     :param files: list of files to delete
     :return: a list of (index+1) user want to delete.
@@ -185,7 +185,7 @@ def check_delete_input(list, files):
 
 def delete_file(nums, files):
     '''
-    Delete files by index and print how much spaces are freed
+    Delete files by index and print how much spaces are freed.
     :param nums: list of (index+1) user want to delete
     :param files: list of files to delete
     '''
