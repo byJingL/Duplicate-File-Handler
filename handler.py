@@ -7,10 +7,7 @@ from pprint import pprint
 
 # --------------------------- Handle input ---------------------------#
 def check_duplicates():
-    """
-    If user wants to check duplicates
-    :return: True for checking; False for not checking
-    """
+    """Return True if user wants to check duplicates."""
     while True:
         print('\n============================================')
         answer = input('Check for duplicates? (yes or no)\n>>> ')
@@ -23,10 +20,7 @@ def check_duplicates():
 
 
 def check_delete():
-    """
-    If users wants to delete duplicates files
-    :return: True for deleting; False for not deleting
-    """
+    """Return True if users wants to delete duplicates files."""
     while True:
         print('\n============================================')
         answer = input('Delete files? (yes or no)\n>>> ')
@@ -51,9 +45,10 @@ def get_hash(full_path):
 def get_file(folder, extension):
     ''' 
     Return a dict with file size as keys.
+
     :param folder: folder to search
     :param extension: file format to search, '' for all file
-    :return dict = {
+    :return: dict = {
         size1: [file path1, file path2, ...],
         size2: [file path1, ...],
         ...,
@@ -77,8 +72,9 @@ def get_file(folder, extension):
 def check_size(files):
     ''' 
     Return a dict just cotains files with same size.
+
     :param files: all files
-    :return dict = {
+    :return: dict = {
         size1: [file1, file2, ...],
         size2: [file1, file2, ...],
         ...
@@ -91,8 +87,9 @@ def check_size(files):
 def check_hash(files):
     ''' 
     Return a nested dict with file size as keys for outter dict and hash value as keys for inner dict.
+
     :param files: files with same size
-    :return dict = {
+    :return: dict = {
         size1: {
             hash1: [file1, file2, ...]
             hash2: [file1, ...]
@@ -120,6 +117,7 @@ def check_hash(files):
 def display_same_size(size_sort, files):
     '''
     Print files have same size.
+
     :param size_sort: user's sorting option
     :param files: files with same size
     '''
@@ -136,11 +134,11 @@ def display_same_size(size_sort, files):
 
 def display_same_hash(size_sort, files):
     '''
-    Print files have same hash.
-    Create a list of files to delete with tuple(file_path, file_size)
+    Return a list of files to delete with tuple(file_path, file_size) and print files have same hash.
+
     :param size_sort: user's sorting option
     :param files: files with same hash
-    :return list = [(file_path1, file_size1), ...]
+    :return: list = [(file_path1, file_size1), ...]
     ]
     '''
     if size_sort == '1':
@@ -165,6 +163,7 @@ def display_same_hash(size_sort, files):
 def check_delete_input(list, files):
     '''
     Return the file number that user want to delete.
+
     :param list: user input list
     :param files: list of files to delete
     :return: a list of (index+1) user want to delete.
@@ -186,6 +185,7 @@ def check_delete_input(list, files):
 def delete_file(nums, files):
     '''
     Delete files by index and print how much spaces are freed.
+    
     :param nums: list of (index+1) user want to delete
     :param files: list of files to delete
     '''
